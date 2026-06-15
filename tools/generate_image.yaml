@@ -1,0 +1,61 @@
+identity:
+  name: generate_image
+  author: muapi
+  label:
+    en_US: Generate Image
+
+description:
+  human:
+    en_US: Generate images using MuAPI
+  llm: Generate images from a text prompt using MuAPI
+
+parameters:
+  - name: prompt
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Prompt
+    human_description:
+      en_US: Text prompt describing the image
+    llm_description: Text prompt describing the image
+
+  - name: model
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Model
+    human_description:
+      en_US: The model to use for image generation
+
+  - name: width
+    type: number
+    required: false
+    form: form
+    label:
+      en_US: Width
+    human_description:
+      en_US: Width of the generated image
+
+  - name: height
+    type: number
+    required: false
+    form: form
+    label:
+      en_US: Height
+    human_description:
+      en_US: Height of the generated image
+
+  - name: num_images
+    type: number
+    required: false
+    form: form
+    label:
+      en_US: Number of Images
+    human_description:
+      en_US: Number of images to generate
+
+extra:
+  python:
+    source: tools/generate_image.py

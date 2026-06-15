@@ -1,0 +1,22 @@
+identity:
+  author: muapi
+  name: muapi
+  description:
+    en_US: Generate images and videos using MuAPI
+  icon: icon.png
+  label:
+    en_US: MuAPI
+
+credentials_for_provider:
+  muapi_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: MuAPI API Key
+
+tools:
+  - tools/generate_image.yaml
+
+extra:
+  python:
+    source: provider/muapi_provider.py
