@@ -1,5 +1,9 @@
+import os
+
 from dify_plugin import ToolProvider
 from dify_plugin.errors.tool import ToolProviderCredentialValidationError
+
+from muapi import MuAPI
 
 
 class MuapiProvider(ToolProvider):
@@ -19,7 +23,13 @@ class MuapiProvider(ToolProvider):
                     "MuAPI API key is required"
                 )
 
+            os.environ["MUAPI_API_KEY"] = api_key
+
+            client = MuAPI()
+
+            client.accounts.balance()
+
         except Exception as e:
             raise ToolProviderCredentialValidationError(
-                str(e)
+                f"MuAPI credential validation failed: {str(e)}"
             )

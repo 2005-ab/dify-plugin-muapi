@@ -2,7 +2,7 @@ identity:
   author: muapi
   name: muapi
   description:
-    en_US: Generate images and videos using MuAPI
+    en_US: Generate images, videos, and audio using MuAPI. Edit images, remove backgrounds, upscale, and remix audio.
   icon: icon.png
   label:
     en_US: MuAPI
@@ -16,6 +16,13 @@ credentials_for_provider:
 
 tools:
   - tools/generate_image.yaml
+  - tools/generate_video.yaml
+  - tools/image_to_video.yaml
+  - tools/edit_image.yaml
+  - tools/remove_background.yaml
+  - tools/upscale_image.yaml
+  - tools/generate_audio.yaml
+  - tools/remix_audio.yaml
 
 extra:
   python:

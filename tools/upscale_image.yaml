@@ -1,0 +1,47 @@
+identity:
+  name: upscale_image
+  author: muapi
+  label:
+    en_US: Upscale Image
+
+description:
+  human:
+    en_US: Upscale and enhance image resolution using MuAPI
+  llm: Upscale an image to higher resolution with enhanced detail using AI via MuAPI
+
+parameters:
+  - name: image
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Image URL
+    human_description:
+      en_US: URL of the image to upscale
+    llm_description: URL of the image to upscale and enhance
+
+  - name: scale_factor
+    type: number
+    required: false
+    form: form
+    label:
+      en_US: Scale Factor
+    human_description:
+      en_US: Factor by which to upscale the image (e.g. 2 for 2x)
+    llm_description: Factor by which to upscale the image resolution
+    default: 2
+
+  - name: model
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Model
+    human_description:
+      en_US: The model to use for upscaling (e.g. aura-sr)
+    llm_description: The model to use for image upscaling
+    default: aura-sr
+
+extra:
+  python:
+    source: tools/upscale_image.py

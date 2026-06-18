@@ -1,2 +1,2 @@
-dify-plugin
+dify-plugin==0.9.1
 git+https://github.com/SamurAIGPT/muapi-python.git

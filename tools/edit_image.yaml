@@ -1,0 +1,56 @@
+identity:
+  name: edit_image
+  author: muapi
+  label:
+    en_US: Edit Image
+
+description:
+  human:
+    en_US: Edit an existing image using a text prompt via MuAPI
+  llm: Edit or transform an existing image based on a text prompt using AI image editing models via MuAPI
+
+parameters:
+  - name: image
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Image URL
+    human_description:
+      en_US: URL of the image to edit
+    llm_description: URL of the source image to edit or transform
+
+  - name: prompt
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Prompt
+    human_description:
+      en_US: Text prompt describing the desired edit
+    llm_description: Text prompt describing how the image should be edited or transformed
+
+  - name: model
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Model
+    human_description:
+      en_US: The model to use for image editing (e.g. flux-kontext-dev)
+    llm_description: The model to use for image editing
+    default: flux-kontext-dev
+
+  - name: aspect_ratio
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Aspect Ratio
+    human_description:
+      en_US: Aspect ratio of the output image (e.g. 1:1, 16:9, 4:3)
+    llm_description: Aspect ratio of the edited output image
+
+extra:
+  python:
+    source: tools/edit_image.py

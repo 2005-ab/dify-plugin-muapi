@@ -1,0 +1,36 @@
+identity:
+  name: remove_background
+  author: muapi
+  label:
+    en_US: Remove Background
+
+description:
+  human:
+    en_US: Remove the background from an image using MuAPI
+  llm: Remove the background from an image to produce a transparent output using AI via MuAPI
+
+parameters:
+  - name: image
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Image URL
+    human_description:
+      en_US: URL of the image to remove the background from
+    llm_description: URL of the image whose background should be removed
+
+  - name: model
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Model
+    human_description:
+      en_US: The model to use for background removal (e.g. bria-rmbg)
+    llm_description: The model to use for background removal
+    default: bria-rmbg
+
+extra:
+  python:
+    source: tools/remove_background.py

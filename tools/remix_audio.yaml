@@ -1,0 +1,55 @@
+identity:
+  name: remix_audio
+  author: muapi
+  label:
+    en_US: Remix Audio
+
+description:
+  human:
+    en_US: Remix or transform existing audio using a text prompt via MuAPI
+  llm: Remix or transform existing audio based on a text description using AI audio generation via MuAPI
+
+parameters:
+  - name: audio
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Audio URL
+    human_description:
+      en_US: URL of the audio file to remix
+    llm_description: URL of the source audio file to remix or transform
+
+  - name: prompt
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Prompt
+    human_description:
+      en_US: Text prompt describing the desired remix style or transformation
+    llm_description: Text prompt describing how the audio should be remixed or transformed
+
+  - name: title
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Title
+    human_description:
+      en_US: Title for the remixed audio track
+    llm_description: Title for the remixed audio track
+
+  - name: tags
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Tags
+    human_description:
+      en_US: Comma-separated genre or style tags (e.g. pop, electronic, chill)
+    llm_description: Comma-separated genre or style tags for the remixed audio
+
+extra:
+  python:
+    source: tools/remix_audio.py

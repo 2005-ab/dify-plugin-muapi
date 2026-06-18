@@ -1,0 +1,56 @@
+identity:
+  name: generate_audio
+  author: muapi
+  label:
+    en_US: Generate Audio
+
+description:
+  human:
+    en_US: Generate audio or music from a text prompt using MuAPI
+  llm: Generate audio or music from a text description using AI audio generation via MuAPI
+
+parameters:
+  - name: prompt
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Prompt
+    human_description:
+      en_US: Text prompt describing the audio or music to generate
+    llm_description: Text prompt describing the audio or music to generate
+
+  - name: title
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Title
+    human_description:
+      en_US: Title for the generated audio track
+    llm_description: Title for the generated audio track
+
+  - name: tags
+    type: string
+    required: false
+    form: form
+    label:
+      en_US: Tags
+    human_description:
+      en_US: Comma-separated genre or style tags (e.g. pop, electronic, chill)
+    llm_description: Comma-separated genre or style tags for the audio
+
+  - name: instrumental
+    type: boolean
+    required: false
+    form: form
+    label:
+      en_US: Instrumental
+    human_description:
+      en_US: Generate instrumental only (no vocals)
+    llm_description: Whether to generate instrumental audio without vocals
+    default: false
+
+extra:
+  python:
+    source: tools/generate_audio.py
